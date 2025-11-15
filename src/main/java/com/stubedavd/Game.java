@@ -9,7 +9,6 @@ public class Game {
     public static final int MAX_COUNT_MISTAKES = 6;
 
     private static final Scanner scanner = new Scanner(System.in);
-
     private final Dictionary dictionary;
 
     private int mistakeCounter;

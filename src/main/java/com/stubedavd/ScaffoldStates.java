@@ -1,68 +1,88 @@
 package com.stubedavd;
 
-public enum ConsoleRenderer {
-    private final String[] HANGMAN_STATES = {
-            // 0 mistakes
-            "  +---+" + "\n" +
+public enum ScaffoldStates {
+    ZERO {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
-                    "=========",
-
-            // 1 mistake
-            "  +---+" + "\n" +
-                    "  |   |" + "\n" +
-                    "  O   |" + "\n" +
-                    "      |" + "\n" +
-                    "      |" + "\n" +
-                    "      |" + "\n" +
-                    "=========",
-
-            // 2 mistakes
-            "  +---+" + "\n" +
+                    "=========";
+        }
+    },
+    ONE {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "  O   |" + "\n" +
+                    "      |" + "\n" +
+                    "      |" + "\n" +
+                    "      |" + "\n" +
+                    "=========";
+        }
+    },
+    TWO {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
+                    "  |   |" + "\n" +
+                    "  O   |" + "\n" +
                     "  |   |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
-                    "=========",
-
-            // 3 mistakes
-            "  +---+" + "\n" +
+                    "=========";
+        }
+    },
+    THREE {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "  O   |" + "\n" +
                     " /|   |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
-                    "=========",
-
-            // 4 mistakes
-            "  +---+" + "\n" +
+                    "=========";
+        }
+    },
+    FOUR {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "  O   |" + "\n" +
                     " /|\\  |" + "\n" +
                     "      |" + "\n" +
                     "      |" + "\n" +
-                    "=========",
-
-            // 5 mistakes
-            "  +---+" + "\n" +
+                    "=========";
+        }
+    },
+    FIVE {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "  O   |" + "\n" +
                     " /|\\  |" + "\n" +
                     " /    |" + "\n" +
                     "      |" + "\n" +
-                    "=========",
-
-            // 6 mistakes (game over)
-            "  +---+" + "\n" +
+                    "=========";
+        }
+    },
+    SIX {
+        @Override
+        public String toString() {
+            return "  +---+" + "\n" +
                     "  |   |" + "\n" +
                     "  O   |" + "\n" +
                     " /|\\  |" + "\n" +
                     " / \\  |" + "\n" +
                     "      |" + "\n" +
-                    "========="
-    };
+                    "=========";
+        }
+    }
 }

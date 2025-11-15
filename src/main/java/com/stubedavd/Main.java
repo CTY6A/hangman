@@ -2,7 +2,8 @@ package com.stubedavd;
 
 public class Main {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.gameLoop();
+        Dictionary dictionary = new Dictionary("russian_words.txt");
+
+        (new Game(dictionary)).gameLoop();
     }
 }

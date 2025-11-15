@@ -1,29 +1,25 @@
 package com.stubedavd;
 
-import java.util.Random;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class Words {
-    private static final String[] WORDS = {
-        "компьютер", "программирование", "алгоритм", "интерфейс", "база данных",
-        "переменная", "функция", "класс", "объект", "наследование",
-        "инкапсуляция", "полиморфизм", "абстракция", "интерфейс", "исключение",
-        "массив", "коллекция", "итератор", "рекурсия", "компилятор",
-        "интерпретатор", "отладка", "тестирование", "разработка", "фреймворк",
-        "библиотека", "документация", "репозиторий", "ветка", "коммит",
-        "слияние", "конфликт", "деплой", "сервер", "клиент",
-        "протокол", "запрос", "ответ", "аутентификация", "авторизация",
-        "шифрование", "безопасность", "оптимизация", "производительность", "алгоритм",
-        "структура данных", "очередь", "стек", "список", "дерево",
-        "граф", "хэш", "сортировка", "поиск"
-    };
+public class Dictionary {
+    private static List<String> words;
 
-    private static final Random random = new Random();
+    public Dictionary(String filename) {
+        try (Stream<String> lines = Files.lines(Paths.get("src", "main", "resources", filename))) {
+            words = lines.collect(Collectors.toList());
+        } catch (IOException e) {
+            System.err.println("Error reading dictionary file: " + e.getMessage());
+            System.exit(1);
+        }
+    }
 
-    /**
-     * Возвращает случайное слово из списка
-     * @return случайное слово в нижнем регистре
-     */
-    public static String getRandomWord() {
-        return WORDS[random.nextInt(WORDS.length)];
+    public String getRandomWord() {
+        return words.get((int) (Math.random() * words.size()));
     }
 }

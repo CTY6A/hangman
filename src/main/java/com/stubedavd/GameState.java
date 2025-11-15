@@ -1,8 +1,7 @@
 package com.stubedavd;
 
 public enum GameState {
-    NEWGAME,
-    ONGOING,
-    VICTORY,
-    DEFEAT
+    NOT_FINISHED,
+    WON,
+    LOST
 }

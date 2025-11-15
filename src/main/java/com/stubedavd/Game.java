@@ -129,7 +129,15 @@ public class Game {
     }
 
     private void checkGameState() {
-        if (guessedLetters.containsAll(Set.of(secretWord.split("")))) {
+        boolean gameWon = true;
+        for (String letter : secretWord.split("")) {
+            if (!guessedLetters.contains(letter)) {
+                gameWon = false;
+                break;
+            }
+        }
+
+        if (gameWon) {
             gameState = GameState.WON;
         } else if (mistakeCounter >= MAX_COUNT_MISTAKES) {
             gameState = GameState.LOST;

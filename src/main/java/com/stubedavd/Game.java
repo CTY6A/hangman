@@ -94,6 +94,21 @@ public class Game {
     }
 
     private void processUserGuess() {
+        String letter = inputLetter();
+
+        if (secretWord.contains(letter)) {
+            guessedLetters.add(letter);
+            System.out.println("Letter found!");
+        } else {
+            if (!wrongLetters.contains(letter)) {
+                mistakeCounter++;
+                wrongLetters.add(letter);
+            }
+            System.out.println("Letter not in the word!");
+        }
+    }
+
+    private String inputLetter() {
         String letter;
         while (true) {
             System.out.print("Enter a letter: ");
@@ -110,17 +125,7 @@ public class Game {
                 System.out.println("Please enter a Russian letter (а-я, ё).");
             }
         }
-
-        if (secretWord.contains(letter)) {
-            guessedLetters.add(letter);
-            System.out.println("Letter found!");
-        } else {
-            if (!wrongLetters.contains(letter)) {
-                mistakeCounter++;
-                wrongLetters.add(letter);
-            }
-            System.out.println("Letter not in the word!");
-        }
+        return letter;
     }
 
     private void checkGameState() {

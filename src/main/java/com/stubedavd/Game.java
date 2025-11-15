@@ -49,6 +49,8 @@ public class Game {
             } else {
                 System.out.println("Game over! You lost.");
             }
+
+            System.out.println("The word was: " + secretWord);
         }
 
         System.out.println("Thank you for playing! Goodbye!");

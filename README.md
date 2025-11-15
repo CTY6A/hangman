@@ -62,7 +62,7 @@ hangman/
 │       │   ├── Main.java          # Entry point
 │       │   ├── GameState.java     # Game state management
 │       │   ├── Dictionary.java    # Word dictionary handling
-│       │   └── ScaffoldStates.java # Visual hangman states
+│       │   └── ScaffoldState.java # Visual hangman states
 │       └── resources/
 │           └── russian_words.txt  # Word dictionary
 ├── pom.xml                       # Maven configuration

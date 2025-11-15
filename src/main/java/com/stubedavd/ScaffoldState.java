@@ -1,6 +1,6 @@
 package com.stubedavd;
 
-public enum ScaffoldStates {
+public enum ScaffoldState {
     ZERO {
         @Override
         public String toString() {

@@ -65,7 +65,7 @@ public class Game {
     }
 
     public void printGameState() {
-        System.out.println(ScaffoldStates.values()[mistakeCounter]);
+        System.out.println(ScaffoldState.values()[mistakeCounter]);
 
         System.out.println("Word: " + getMaskedWord());
 
